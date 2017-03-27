@@ -1,0 +1,12 @@
+To run with local server, run the following commands under your react-native project root directory
+
+    react-native start > /dev/null 2>&1 &
+    adb reverse tcp:8081 tcp:8081
+
+please take a look at dsissitka's answer for more details.
+To run without a server, bundle the jsfile into the apk by running:
+
+    create an assets folder under android/app/src/main
+    curl "http://localhost:8081/index.android.bundle?platform=android" -o "android/app/src/main/assets/index.android.bundle"
+
+please take a look at kzzzf's answer for more details.
